@@ -35,9 +35,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <!--
     <ClCompile Include="clang\basetypematcher.cpp" />
     <ClCompile Include="clang\clang.cpp" />
     <ClCompile Include="clang\evalexpr.cpp" />
+    -->
     <ClCompile Include="customtypes.cpp" />
     <ClCompile Include="dataaccessor.cpp" />
     <ClCompile Include="dbgio.cpp" />
@@ -112,12 +114,14 @@
     <ClInclude Include="..\include\kdlib\typeinfo.h" />
     <ClInclude Include="..\include\kdlib\variant.h" />
     <ClInclude Include="..\include\kdlib\windbg.h" />
+    <!--
     <ClInclude Include="clang\basetypematcher.h" />
     <ClInclude Include="clang\clang.h" />
     <ClInclude Include="clang\evalexpr.h" />
     <ClInclude Include="clang\exprparser.h" />
     <ClInclude Include="clang\parser.h" />
     <ClInclude Include="clang\typeparser.h" />
+    -->
     <ClInclude Include="dataaccessorimpl.h" />
     <ClInclude Include="dia\diacallback.h" />
     <ClInclude Include="dia\diawrapper.h" />
@@ -153,35 +157,35 @@
     <ProjectName>kdlib</ProjectName>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <LLVM_USE_CRT_DEBUG>MDd</LLVM_USE_CRT_DEBUG>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Static|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <LLVM_USE_CRT_DEBUG>MTd</LLVM_USE_CRT_DEBUG>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <LLVM_USE_CRT_DEBUG>MDd</LLVM_USE_CRT_DEBUG>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <LLVM_USE_CRT_DEBUG>MTd</LLVM_USE_CRT_DEBUG>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -189,7 +193,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <LLVM_USE_CRT_RELEASE>MD</LLVM_USE_CRT_RELEASE>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Static|Win32'" Label="Configuration">
@@ -197,7 +201,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <LLVM_USE_CRT_RELEASE>MT</LLVM_USE_CRT_RELEASE>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -205,7 +209,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <LLVM_USE_CRT_RELEASE>MD</LLVM_USE_CRT_RELEASE>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Static|x64'" Label="Configuration">
@@ -213,7 +217,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <LLVM_USE_CRT_RELEASE>MTd</LLVM_USE_CRT_RELEASE>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -451,8 +455,6 @@
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="$(SolutionDir)\packages\llvm-cmake.6.0.0.1\build\native\llvm-cmake.targets" Condition="Exists('$(SolutionDir)\packages\llvm-cmake.6.0.0.1\build\native\llvm-cmake.targets')" />
-    <Import Project="$(SolutionDir)\packages\clang-cmake.6.0.0.1\build\native\clang-cmake.targets" Condition="Exists('$(SolutionDir)\packages\clang-cmake.6.0.0.1\build\native\clang-cmake.targets')" />
     <Import Project="$(SolutionDir)\packages\boost.1.67.0.0\build\boost.targets" Condition="Exists('$(SolutionDir)\packages\boost.1.67.0.0\build\boost.targets')" />
     <Import Project="$(SolutionDir)\packages\boost_atomic-src.1.67.0.0\build\boost_atomic-src.targets" Condition="Exists('$(SolutionDir)\packages\boost_atomic-src.1.67.0.0\build\boost_atomic-src.targets')" />
     <Import Project="$(SolutionDir)\packages\boost_chrono-src.1.67.0.0\build\boost_chrono-src.targets" Condition="Exists('$(SolutionDir)\packages\boost_chrono-src.1.67.0.0\build\boost_chrono-src.targets')" />
@@ -465,8 +467,6 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\packages\llvm-cmake.6.0.0.1\build\native\llvm-cmake.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\llvm-cmake.6.0.0.1\build\native\llvm-cmake.targets'))" />
-    <Error Condition="!Exists('$(SolutionDir)\packages\clang-cmake.6.0.0.1\build\native\clang-cmake.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\clang-cmake.6.0.0.1\build\native\clang-cmake.targets'))" />
     <Error Condition="!Exists('$(SolutionDir)\packages\boost.1.67.0.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost.1.67.0.0\build\boost.targets'))" />
     <Error Condition="!Exists('$(SolutionDir)\packages\boost_atomic-src.1.67.0.0\build\boost_atomic-src.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost_atomic-src.1.67.0.0\build\boost_atomic-src.targets'))" />
     <Error Condition="!Exists('$(SolutionDir)\packages\boost_chrono-src.1.67.0.0\build\boost_chrono-src.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost_chrono-src.1.67.0.0\build\boost_chrono-src.targets'))" />
