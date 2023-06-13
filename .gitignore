@@ -1,0 +1,5 @@
+Debug/
+*.user
+x64/
+Release_Static/
+Release/

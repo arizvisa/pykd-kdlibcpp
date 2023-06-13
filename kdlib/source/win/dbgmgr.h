@@ -9,6 +9,7 @@
 #include <atlbase.h>
 
 #include <boost/thread/recursive_mutex.hpp>
+#include <boost/noncopyable.hpp>
 
 #include "kdlib/dbgcallbacks.h"
 
