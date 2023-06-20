@@ -701,7 +701,7 @@ private:
                 { maxT,         maxT,       maxT,       maxT,       maxT,       maxT,           maxT,           maxT,           maxT,       maxT,       maxT,       doubleT }      //doubleT
         };
 
-        if (v1.m_numType >= maxT || v2.m_numType >= maxT)
+        if (v1.m_numType >= maxT || v2.m_numType >= maxT || v1.m_numType < 0 || v2.m_numType < 0)
             throw NumVariantError();
 
         return v1.m_numType <= v2.m_numType ? castMatrix[v1.m_numType][v2.m_numType] : castMatrix[v2.m_numType][v1.m_numType];
